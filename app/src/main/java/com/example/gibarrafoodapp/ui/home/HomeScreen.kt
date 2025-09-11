@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.dp
 import com.example.gibarrafoodapp.data.mock.MockData
 import com.example.gibarrafoodapp.ui.home.components.CategoriesRow
 import com.example.gibarrafoodapp.ui.home.components.HomeTopBar
+import com.example.gibarrafoodapp.ui.home.components.RestaurantsRow
 
 @Composable
 fun HomeScreen() {
@@ -49,6 +50,7 @@ fun HomeScreen() {
                 color = MaterialTheme.colorScheme.onSurface
             )
             Spacer(Modifier.height(12.dp))
+            RestaurantsRow(restaurants = MockData.restaurants)
 
             Spacer(Modifier.height(24.dp))
 
