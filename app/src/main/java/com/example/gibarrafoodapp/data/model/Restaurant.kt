@@ -1,4 +1,6 @@
 package com.example.gibarrafoodapp.data.model
 
-class Restaurant {
-}
+data class Restaurant(
+    val name: String,
+    val image: String
+)

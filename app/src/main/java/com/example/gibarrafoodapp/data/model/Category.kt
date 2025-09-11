@@ -1,4 +1,6 @@
 package com.example.gibarrafoodapp.data.model
 
-class Category {
-}
+data class Category(
+    val name: String,
+    val image: String
+)
