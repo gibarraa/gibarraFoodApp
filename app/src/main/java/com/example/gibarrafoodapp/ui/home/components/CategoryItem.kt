@@ -2,8 +2,7 @@
 
 package com.example.gibarrafoodapp.ui.home.components
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -15,9 +14,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.layout.ContentScale
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.gibarrafoodapp.data.model.Category
 
@@ -27,19 +27,22 @@ fun CategoryItem(category: Category, modifier: Modifier = Modifier) {
         modifier = modifier.width(96.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Box(
+        GlideImage(
+            model = category.image,
+            contentDescription = category.name,
             modifier = Modifier
                 .size(96.dp)
-                .background(Color(0xFFE4574D), CircleShape),
-            contentAlignment = Alignment.Center
-        ) {
-            GlideImage(
-                model = category.image,
-                contentDescription = category.name,
-                modifier = Modifier.size(70.dp)
-            )
-        }
+                .clip(CircleShape)
+                .border(
+                    width = 6.dp,
+                    color = MaterialTheme.colorScheme.primary,
+                    shape = CircleShape
+                ),
+            contentScale = ContentScale.Crop
+        )
+
         Spacer(Modifier.height(8.dp))
+
         Text(
             text = category.name,
             style = MaterialTheme.typography.bodyMedium,
