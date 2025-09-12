@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.gibarrafoodapp.data.mock.MockData
 import com.example.gibarrafoodapp.ui.home.components.CategoriesRow
+import com.example.gibarrafoodapp.ui.home.components.FoodsGrid
 import com.example.gibarrafoodapp.ui.home.components.HomeTopBar
 import com.example.gibarrafoodapp.ui.home.components.RestaurantsRow
 
@@ -60,6 +61,7 @@ fun HomeScreen() {
                 color = MaterialTheme.colorScheme.onSurface
             )
             Spacer(Modifier.height(12.dp))
+            FoodsGrid(foods = MockData.foods)
         }
     }
 }
