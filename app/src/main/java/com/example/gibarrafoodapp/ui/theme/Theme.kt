@@ -5,28 +5,25 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-private val AppLightColors = lightColorScheme(
+private val LightColors = lightColorScheme(
     primary = RedPrimary,
-    onPrimary = Color.White,
     secondary = GreenAccent,
+    background = BackgroundLight,
+    surface = BackgroundLight,
+    onPrimary = Color.White,
     onSecondary = Color.White,
-
-    background = SurfaceSoft,
-    onBackground = TextPrimary,
-    surface = SurfaceSoft,
-    onSurface = TextPrimary,
-
-    surfaceVariant = SurfaceSoftVariant,
-    outline = TextSecondary
+    onBackground = TextDark,
+    onSurface = TextDark,
 )
+
 
 @Composable
 fun GibarraFoodAppTheme(
     content: @Composable () -> Unit
 ) {
     MaterialTheme(
-        colorScheme = AppLightColors,
-        typography = Typography, // viene de tu Type.kt del template
+        colorScheme = LightColors,
+        typography = AppTypography,
         content = content
     )
 }
